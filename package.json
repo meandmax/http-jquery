@@ -1,0 +1,22 @@
+{
+  "name": "lost-http",
+  "version": "0.0.1",
+  "repository": "https://github.com/meandmax/lost-http",
+  "description": "lost-http",
+  "author": {
+    "name": "Maximilian Heinz",
+    "email": "info@maximilian-heinz.de",
+    "url": "https://twitter.com/_meandmax_"
+  },
+  "devDependencies": {
+    "expressive-assertion": "~1.2.0",
+    "mocha": "~2.1.0",
+    "typesystem": "~4.1.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "engines": {
+    "node": "0.10.3"
+  }
+}
