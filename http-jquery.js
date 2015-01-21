@@ -54,22 +54,3 @@ exports.post = function (url, data) {
         data: data
     });
 };
-
-exports.parseParameters = function () {
-    var parameters = Object.create(null);
-    var search     = window.location.search;
-
-    var query;
-
-    if (!search || !(query = search.substring(1).trim())) {
-        return parameters;
-    }
-
-    query.split('&').map(function (parameter) {
-        return parameter.split('=');
-    }).forEach(function (parameter) {
-        parameters[parameter[0]] = parameter[1];
-    });
-
-    return parameters;
-};

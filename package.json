@@ -1,16 +1,18 @@
 {
-  "name": "lost-http",
+  "name": "lost-http-jquery",
   "version": "0.0.1",
-  "repository": "https://github.com/meandmax/lost-http",
-  "description": "lost-http",
+  "repository": "https://github.com/meandmax/lost-http-jquery",
+  "description": "http utility functions for jQuery",
   "author": {
     "name": "Maximilian Heinz",
     "email": "info@maximilian-heinz.de",
     "url": "https://twitter.com/_meandmax_"
   },
   "devDependencies": {
+    "JQDeferred": "~2.1.0",
     "expressive-assertion": "~1.2.0",
     "mocha": "~2.1.0",
+    "sinon": "~1.12.2",
     "typesystem": "~4.1.0"
   },
   "scripts": {

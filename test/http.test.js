@@ -2,10 +2,11 @@
 
 'use strict';
 
-var assert   = require('assert');
+var http     = require('../http-jquery.js');
+var assert   = require('expressive-assertion');
 var Deferred = require('JQDeferred');
-var http     = require('../../lib/utils/http.js');
 var sinon    = require('sinon');
+var ts       = require('typesystem');
 
 describe('http', function () {
     var jQuery;
@@ -33,16 +34,22 @@ describe('http', function () {
 
             jQuery.ajax.returns(returnValue);
 
-            assert.strictEqual(http.getJson(url, data), returnValue);
+            assert(function () {
+                return http.getJson(url, data) === returnValue;
+            });
 
-            assert(jQuery.ajax.calledOnce);
+            assert(function () {
+                return jQuery.ajax.calledOnce;
+            });
 
-            assert(jQuery.ajax.calledWithExactly({
-                url: url,
-                type: 'GET',
-                dataType: 'json',
-                data: data
-            }));
+            assert(function () {
+                return jQuery.ajax.calledWithExactly({
+                    url: url,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: data
+                });
+            });
         });
     });
 
@@ -53,15 +60,21 @@ describe('http', function () {
 
             jQuery.ajax.returns(returnValue);
 
-            assert.strictEqual(http.getScript(url), returnValue);
+            assert(function () {
+                return http.getScript(url) === returnValue;
+            });
 
-            assert(jQuery.ajax.calledOnce);
+            assert(function () {
+                return jQuery.ajax.calledOnce;
+            });
 
-            assert(jQuery.ajax.calledWithExactly({
-                url: url,
-                type: 'GET',
-                dataType: 'script'
-            }));
+            assert(function () {
+                return jQuery.ajax.calledWithExactly({
+                    url: url,
+                    type: 'GET',
+                    dataType: 'script'
+                });
+            });
         });
     });
 
@@ -77,7 +90,9 @@ describe('http', function () {
         it('returns a deferred', function () {
             var url = Math.random();
 
-            assert.strictEqual(typeof http.getTemplate(url).promise, 'function');
+            assert(function () {
+                return ts.isFunctionObject(http.getTemplate(url).promise);
+            });
         });
 
         it('resolves the returned deferreds', function () {
@@ -90,8 +105,13 @@ describe('http', function () {
 
             deferredScript.resolve();
 
-            assert(callback1.calledOnce);
-            assert(callback2.calledOnce);
+            assert(function () {
+                return callback1.calledOnce;
+            });
+
+            assert(function () {
+                return callback2.calledOnce;
+            });
         });
 
         it('resolves the returned deferred immediately', function () {
@@ -105,8 +125,13 @@ describe('http', function () {
 
             http.getTemplate(url).done(callback2);
 
-            assert(callback1.calledOnce);
-            assert(callback2.calledOnce);
+            assert(function () {
+                return callback1.calledOnce;
+            });
+
+            assert(function () {
+                return callback2.calledOnce;
+            });
         });
 
         afterEach(function () {
@@ -122,36 +147,20 @@ describe('http', function () {
 
             jQuery.ajax.returns(returnValue);
 
-            assert.strictEqual(http.post(url, data), returnValue);
+            assert(function () {
+                return http.post(url, data) === returnValue;
+            });
 
-            assert(jQuery.ajax.calledOnce);
+            assert(function () {
+                return jQuery.ajax.calledOnce;
+            });
 
-            assert(jQuery.ajax.calledWithExactly({
-                url: url,
-                type: 'POST',
-                data: data
-            }));
-        });
-    });
-
-    describe('.parseParameters()', function () {
-        it('returns an empty object', function () {
-            setWindowLocationSearch('');
-            assert.deepEqual(http.parseParameters(), {});
-
-            setWindowLocationSearch('?');
-            assert.deepEqual(http.parseParameters(), {});
-
-            setWindowLocationSearch('? ');
-            assert.deepEqual(http.parseParameters(), {});
-        });
-
-        it('returns a parameters object', function () {
-            setWindowLocationSearch('?foo=&bar=baz');
-
-            assert.deepEqual(http.parseParameters(), {
-                foo: '',
-                bar: 'baz'
+            assert(function () {
+                return jQuery.ajax.calledWithExactly({
+                    url: url,
+                    type: 'POST',
+                    data: data
+                });
             });
         });
     });

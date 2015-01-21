@@ -1,3 +1,8 @@
-# lost-http
+# lost-http-jquery
 
-http helper functions ...
+http helper functions for jQuery:
+
+- .getJson()
+- .getScript()
+- .getTemplate()
+- .post()
