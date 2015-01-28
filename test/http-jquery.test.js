@@ -11,14 +11,6 @@ var ts       = require('typesystem');
 describe('http', function () {
     var jQuery;
 
-    var setWindowLocationSearch = function (search) {
-        global.window = {
-            location: {
-                search: search
-            }
-        };
-    };
-
     beforeEach(function () {
         jQuery = global.$ = {
             ajax: sinon.stub(),
@@ -91,7 +83,7 @@ describe('http', function () {
             var url = Math.random();
 
             assert(function () {
-                return ts.isFunctionObject(http.getTemplate(url).promise);
+                return ts.isFunction(http.getTemplate(url).promise);
             });
         });
 
