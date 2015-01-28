@@ -1,6 +1,6 @@
 {
   "name": "lost-http-jquery",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "http utility functions for jQuery",
   "author": {
     "name": "Maximilian Heinz",
@@ -8,26 +8,26 @@
     "url": "https://twitter.com/_meandmax_"
   },
   "bugs": {
-      "url": "https://github.com/meandmax/lost-http-jquery/issues"
+    "url": "https://github.com/meandmax/lost-http-jquery/issues"
   },
   "inceptionYear": 2015,
   "licenses": [
-      {
-          "type": "MIT",
-          "url": "https://raw.githubusercontent.com/meandmax/lost-http-jquery/master/LICENSE"
-      }
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/meandmax/lost-http-jquery/master/LICENSE"
+    }
   ],
   "repository": {
-      "type": "git",
-      "url": "https://github.com/meandmax/lost-http-jquery.git"
+    "type": "git",
+    "url": "https://github.com/meandmax/lost-http-jquery.git"
   },
   "main": "./lost-http-jquery.js",
   "config": {
-      "mocha-cov-reporter": {
-          "failOnError": true,
-          "threshold": 100,
-          "useColors": true
-      }
+    "mocha-cov-reporter": {
+      "failOnError": true,
+      "threshold": 100,
+      "useColors": true
+    }
   },
   "devDependencies": {
     "blanket": "latest",
@@ -50,10 +50,10 @@
     "sinon": "latest",
     "typesystem": "latest"
   },
-    "scripts": {
-        "test": "node_modules/.bin/grunt"
-    },
-    "engines": {
-        "node": "0.10.3"
+  "scripts": {
+    "test": "node_modules/.bin/grunt"
+  },
+  "engines": {
+    "node": "0.10.3"
   }
 }
