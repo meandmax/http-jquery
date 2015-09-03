@@ -1,5 +1,5 @@
 {
-  "name": "lost-http-jquery",
+  "name": "http-jquery",
   "version": "0.0.1",
   "description": "http utility functions for jQuery",
   "author": {
@@ -8,20 +8,20 @@
     "url": "https://twitter.com/_meandmax_"
   },
   "bugs": {
-    "url": "https://github.com/meandmax/lost-http-jquery/issues"
+    "url": "https://github.com/meandmax/http-jquery/issues"
   },
   "inceptionYear": 2015,
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.githubusercontent.com/meandmax/lost-http-jquery/master/LICENSE"
+      "url": "https://raw.githubusercontent.com/meandmax/http-jquery/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/meandmax/lost-http-jquery.git"
+    "url": "https://github.com/meandmax/http-jquery.git"
   },
-  "main": "./lost-http-jquery.js",
+  "main": "./http-jquery.js",
   "config": {
     "mocha-cov-reporter": {
       "failOnError": true,

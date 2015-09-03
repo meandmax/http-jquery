@@ -1,4 +1,4 @@
-# lost-http-jquery
+# http-jquery
 
 [![license](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/meandmax/lost-http-jquery/master/LICENSE)
 [![npm](http://img.shields.io/npm/v/lost-http-jquery.svg?style=flat)](https://www.npmjs.com/package/lost-http-jquery)
