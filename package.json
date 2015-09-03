@@ -1,6 +1,6 @@
 {
   "name": "http-jquery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "http utility functions for jQuery",
   "author": {
     "name": "Maximilian Heinz",
